@@ -7,7 +7,37 @@
 
   <body>
     <!-- write the body here -->
+	  <form id="userForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age"><br>
+        <input type="submit" id="btn" value="Submit">
+    </form>
 
-    <script type="text/javascript" src="./script.js"></script>
+
+    <script type="text/javascript" src="./script.js">
+		document.getElementById('userForm').addEventListener('submit', function(event) {
+    // Preventing the default form submission
+    event.preventDefault();
+    
+    // Accessing the name and age fields
+    let name = document.getElementById('name').value;
+    let age = document.getElementById('age').value;
+
+    // Validate the inputs
+    if(name === "" || age === "") {
+        alert("Please enter valid details.");
+        return;
+    }
+
+    // Create a promise
+    let ageCheckPromise = new Promise(function(resolve, reject) {
+        // TODO: Implement the promise logic here
+    });
+
+    
+	</script>
+	  
   </body>
 </html>

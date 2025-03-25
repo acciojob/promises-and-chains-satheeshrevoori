@@ -32,11 +32,22 @@
     }
 
     // Create a promise
-    let ageCheckPromise = new Promise(function(resolve, reject) {
-        // TODO: Implement the promise logic here
-    });
+    let ageCheckPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if(age >= 18) {
+            resolve(`Welcome, ${name}. You can vote.`);
+        } else {
+            reject(`Oh sorry ${name}, you aren't old enough.`);
+        }
+    }, 4000); // 4 seconds delay
+});
 
-    
+// Handle the promise
+ageCheckPromise.then((message) => {
+    alert(message);
+}).catch((error) => {
+    alert(error);
+});
 	</script>
 	  
   </body>
